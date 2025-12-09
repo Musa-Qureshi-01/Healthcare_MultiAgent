@@ -1,3 +1,5 @@
+python_version < "3.13"
+
 # ===== Core Python & Data =====
 pandas==2.2.3
 numpy==1.26.4
