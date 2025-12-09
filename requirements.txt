@@ -23,7 +23,7 @@ pdfminer.six
 requests
 urllib3
 beautifulsoup4==4.12.3
-reportlab
+reportlab==4.0.9
 
 sqlalchemy
 
