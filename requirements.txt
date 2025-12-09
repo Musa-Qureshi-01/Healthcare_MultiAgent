@@ -1,10 +1,8 @@
 python_version < "3.13"
-
 # ===== Core Python & Data =====
-pandas==2.2.3
+pandas==2.2.0
 numpy==1.26.4
 python-dateutil==2.9.0.post0
-numexpr==2.10.1
 
 # ===== Streamlit UI =====
 streamlit==1.39.0
@@ -15,13 +13,12 @@ matplotlib==3.9.0
 plotly==5.24.1
 
 # ===== LangChain Ecosystem =====
-langchain==0.2.14
-langchain-core==0.2.34
-langchain-community==0.2.8
+langchain==0.2.15
+langchain-core==0.2.36
+langchain-community==0.2.10
 langchain-openai==0.1.25
-langsmith>=0.1.75,<0.2.0
+langsmith==0.1.76
 tiktoken==0.7.0
-
 
 # ===== PDF Parsing =====
 pymupdf==1.24.10
