@@ -251,9 +251,9 @@ def render_home():
 
     col1, col2, col3, col4 = st.columns(4)
 
-    ppt_path = "assets/ppt.pdf"
-    srf_path = "assets/srf_document.pdf"
-    cs_path = "assets/case_study.pdf"
+    ppt_path = "assets/EY_Projeect_Case Study.pdf"
+    srf_path = "assets/EY_Projeect_SRS.pdf"
+    cs_path = "https://shorturl.at/pRUj5"
     extra_path = "assets/extra_doc.pdf"
 
     def view_button(label, path):
