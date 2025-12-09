@@ -17,30 +17,27 @@ env/
 .VENV/
 ENV/
 
-# Streamlit cache
+# Streamlit cache & secrets
 .streamlit/
 .streamlit/secrets.toml
 
-# Local configuration files
+# Environment variables
 *.env
 *.env.local
 *.env.production
-secrets.json
-config.json
+*.env.stage
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Logging + temp files
+# Logs & temp files
 logs/
 *.log
 *.tmp
 temp/
 tmp/
 *.pid
+*.bak
 
 ###############################
-# 📦 DEPENDENCIES
+# 📦 DEPENDENCIES & BUILD
 ###############################
 
 # Pip / Poetry / Pipenv
@@ -59,16 +56,21 @@ dist/
 # 📁 DATA & SENSITIVE FILES
 ###############################
 
-# Provider CSV & sensitive data
+# Allow providers.csv (needed for Streamlit demo)
+!data/providers.csv
+
+# Ignore all other generated data
 data/*.csv
+data/**/*.csv
 data/*.xlsx
 data/*.xls
 data/*.json
-data/**/*.csv
+data/**/*.json
 
 # Provider PDFs & documents
-data/provider_docs/*.pdf
-data/provider_docs/**/*.pdf
+data/pdfs/
+data/provider_docs/
+data/pdf_samples/
 
 # Output files
 data/final_results.csv
@@ -76,7 +78,7 @@ data/batch_output.csv
 output/
 exports/
 
-# SQLite databases
+# Local SQLite DBs
 *.db
 *.sqlite
 *.sqlite3
@@ -86,37 +88,35 @@ provider_system.db
 # 🎨 FRONTEND / UI ASSETS
 ###############################
 
-# Node / npm
 node_modules/
 npm-debug.log
 yarn-debug.log
 yarn-error.log
 
 # Build folders
-build/
 public/build/
 dist/
 *.map
 
 ###############################
-# 🧠 ML / AGENTIC / MODEL FILES
+# 🧠 AI / ML / AGENT FILES
 ###############################
 
 # Model checkpoints
 checkpoints/
+models/
 *.h5
 *.ckpt
 *.pth
 *.pt
 *.joblib
 *.pkl
-models/*
-agents/cache/
 
-# LangChain caches
+# LangChain / LangGraph caches
 .lc/
 .cache/
 langchain_cache/
+agents/cache/
 
 ###############################
 # 💻 IDE / OS FILES
@@ -130,36 +130,13 @@ langchain_cache/
 .idea/
 *.iml
 
-# OS-specific
+# OS-specific files
 .DS_Store
 Thumbs.db
 desktop.ini
 
 ###############################
-# 📦 ZIP / ARCHIVES
-###############################
-*.zip
-*.tar
-*.tar.gz
-*.rar
-
-###############################
-# ⛔ SECURITY PROTECTION
-###############################
-
-# API keys & credentials
-api_keys.txt
-keys.txt
-*.key
-*.pem
-*.crt
-*.p12
-token.txt
-credentials/
-auth/
-
-###############################
-# 📝 PROJECT SPECIFIC
+# 📝 TESTS & REPORTS
 ###############################
 
 # Test artifacts
@@ -175,3 +152,24 @@ uploads/
 reports/*.pdf
 reports/*.docx
 reports/*.xlsx
+
+###############################
+# 🔒 SECURITY KEYS
+###############################
+api_keys.txt
+keys.txt
+*.key
+*.pem
+*.crt
+*.p12
+token.txt
+credentials/
+auth/
+
+###############################
+# 📦 ARCHIVES
+###############################
+*.zip
+*.tar
+*.tar.gz
+*.rar
